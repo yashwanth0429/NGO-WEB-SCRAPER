@@ -1,0 +1,80 @@
+#Add the required datails of the NGO Website according to your needs for data extraction  
+
+
+akshayapatra.org:
+  contact_pages:
+    - https://www.akshayapatra.org/contact-us
+    - https://akshayapatra.com/contact/
+    - https://www.akshayapatra.org/media-queries
+  program_pages:
+    - https://www.akshayapatra.org/kitchen-addresses
+  selectors:
+    og_name:
+      url: https://www.akshayapatra.org/
+      required: true
+    address:
+      regex_any:
+        - "#?\\s*72.*?Bengalur[ua]\\s*[-–]?\\s*5600\\d{2}"
+      required: true
+    phones:
+      prefer:
+        - "1800"
+      required_min: 1
+    services:
+      static: ["PM POSHAN/Mid-Day Meal implementation","Central kitchen operations"]
+      required: true
+    contact_person:
+      page: "https://www.akshayapatra.org/media-queries"
+      regex: "(?i)Media.*?:\\s*([A-Z][A-Za-z .]+).*?(\\+?\\d[\\d\\s-]{7,15})"
+      format: "Vivek S Media & PR"
+      required: true
+
+balrakshabharat.org:
+  contact_pages:
+    - https://balrakshabharat.org/about-us/contact/
+  program_pages:
+    - https://balrakshabharat.org/
+  selectors:
+    og_name:
+      url: https://balrakshabharat.org/
+      required: true
+    address:
+      regex_any:
+        - "D-61.*?New Delhi\\s*[-–]\\s*110065"
+      required: true
+    phones:
+      regex_any:
+        - "\\+91\\s*98\\d{8}"
+      required_min: 2
+    services:
+      static: ["Education","Health & Nutrition","Child Protection","Emergency Response/Resilience","Livelihood/Skills"]
+      required: true
+    contact_person:
+      regex: "Program Implementation.*?Program Lead:\\s*([A-Za-z ]+)"
+      format: "{name}, Program Lead (National)"
+      required: true
+
+smilefoundationindia.org:
+  contact_pages:
+    - https://www.smilefoundationindia.org/contact-us/
+  program_pages:
+    - https://www.smilefoundationindia.org
+  selectors:
+    og_name:
+      url: https://www.smilefoundationindia.org
+      required: true
+    address:
+      regex_any:
+        - "161 B/4.*?New Delhi\\s*[-–]\\s*110049"
+      required: true
+    phones:
+      regex_any:
+        - "\\+?91[-\\s]?11[-\\s]?4312\\d{4}"
+        - "\\+?91[-\\s]?11[-\\s]?4135\\d{3,4}"
+      required_min: 1
+    services:
+      static: ["Education","Healthcare","Livelihood","Women Empowerment"]
+      required: true
+    contact_person:
+      static: "Parul Sharma, Corporate Partnerships"
+      required: true
